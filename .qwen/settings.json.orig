@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(C:\\Users\\Home\\Credaly\\services\\scoring-api\\src/**)"
+    ]
+  }
+}

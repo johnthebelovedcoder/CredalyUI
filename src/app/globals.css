@@ -1,94 +1,174 @@
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  :root {
+    /* Credaly dark theme */
+    --background: 216 50% 4%;
+    --foreground: 210 40% 93%;
+    --card: 216 50% 8%;
+    --card-foreground: 210 40% 93%;
+    --popover: 216 50% 8%;
+    --popover-foreground: 210 40% 93%;
+    --primary: 37 94% 59%;
+    --primary-foreground: 216 50% 4%;
+    --secondary: 216 50% 10%;
+    --secondary-foreground: 210 40% 93%;
+    --muted: 216 33% 30%;
+    --muted-foreground: 216 33% 50%;
+    --accent: 216 50% 12%;
+    --accent-foreground: 37 94% 59%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 93%;
+    --border: 216 33% 25%;
+    --input: 216 33% 25%;
+    --ring: 37 94% 59%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 216 50% 6%;
+    --sidebar-foreground: 216 33% 50%;
+    --sidebar-primary: 37 94% 59%;
+    --sidebar-primary-foreground: 216 50% 4%;
+    --sidebar-accent: 216 50% 12%;
+    --sidebar-accent-foreground: 37 94% 59%;
+    --sidebar-border: 216 33% 18%;
+    --sidebar-ring: 37 94% 59%;
+
+    /* Credaly named tokens (RGB for alpha compositing) */
+    --credaly-bg: 6, 16, 30;
+    --credaly-s1: 12, 26, 48;
+    --credaly-s2: 17, 34, 64;
+    --credaly-s3: 22, 44, 82;
+    --credaly-amber: 245, 166, 35;
+    --credaly-teal: 0, 201, 167;
+    --credaly-success: 34, 197, 94;
+    --credaly-danger: 239, 68, 68;
+    --credaly-orange: 249, 115, 22;
+    --credaly-blue: 59, 130, 246;
+    --credaly-text: 226, 234, 244;
+    --credaly-muted: 107, 132, 168;
+    --credaly-faint: 42, 63, 96;
+  }
+
+  .dark {
+    --background: 216 50% 4%;
+    --foreground: 210 40% 93%;
+    --card: 216 50% 8%;
+    --card-foreground: 210 40% 93%;
+    --popover: 216 50% 8%;
+    --popover-foreground: 210 40% 93%;
+    --primary: 37 94% 59%;
+    --primary-foreground: 216 50% 4%;
+    --secondary: 216 50% 10%;
+    --secondary-foreground: 210 40% 93%;
+    --muted: 216 33% 30%;
+    --muted-foreground: 216 33% 50%;
+    --accent: 216 50% 12%;
+    --accent-foreground: 37 94% 59%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 93%;
+    --border: 216 33% 25%;
+    --input: 216 33% 25%;
+    --ring: 37 94% 59%;
+
+    --sidebar-background: 216 50% 6%;
+    --sidebar-foreground: 216 33% 50%;
+    --sidebar-primary: 37 94% 59%;
+    --sidebar-primary-foreground: 216 50% 4%;
+    --sidebar-accent: 216 50% 12%;
+    --sidebar-accent-foreground: 37 94% 59%;
+    --sidebar-border: 216 33% 18%;
+    --sidebar-ring: 37 94% 59%;
   }
 }
 
 @layer base {
-  .theme {
-    --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
-  }
-  :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
-  }
-  .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
-  }
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
-  html {
-    @apply font-sans;
+}
+
+@layer components {
+  /* Credaly card */
+  .credaly-card {
+    @apply bg-credaly-s1 rounded-xl;
+    border: 1px solid rgba(100, 140, 200, 0.12);
   }
+  .credaly-card-header {
+    @apply px-5 py-4;
+    border-bottom: 1px solid rgba(100, 140, 200, 0.12);
+  }
+
+  /* Credaly table */
+  .credaly-table {
+    @apply w-full border-collapse;
+  }
+  .credaly-table th {
+    @apply text-left px-5 py-3 text-[11px] font-medium uppercase tracking-wide;
+    color: rgb(var(--credaly-muted));
+  }
+  .credaly-table td {
+    @apply px-5 py-3.5 text-sm;
+    color: rgb(var(--credaly-text));
+  }
+  .credaly-table tbody tr {
+    border-bottom: 1px solid rgba(100, 140, 200, 0.12);
+    @apply transition-colors duration-150;
+  }
+  .credaly-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  /* Credaly badge */
+  .credaly-badge {
+    @apply inline-flex items-center rounded px-2 py-0.5 text-[10px] font-semibold tracking-widest;
+  }
+
+  /* Page header */
+  .credaly-page-header {
+    @apply mb-7 flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between;
+  }
+  .credaly-page-title {
+    @apply text-[22px] font-bold text-credaly-text;
+  }
+  .credaly-page-subtitle {
+    @apply text-sm text-credaly-muted;
+  }
+
+  /* KPI row */
+  .credaly-kpi-row {
+    @apply flex flex-wrap gap-3.5 mb-6;
+  }
+
+  /* Grid layouts */
+  .credaly-grid-2 {
+    @apply grid grid-cols-1 gap-4 lg:grid-cols-[1.6fr_1fr];
+  }
+  .credaly-grid-equal {
+    @apply grid grid-cols-1 gap-3.5 md:grid-cols-2;
+  }
+  .credaly-grid-result {
+    @apply grid grid-cols-1 gap-3.5 lg:grid-cols-[340px_1fr];
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
 }

@@ -27,6 +27,13 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env.staging
+.env.production
+!.env.example
+
+# Sentry
+.sentryclirc
+SENTRY_AUTH_TOKEN
 
 # vercel
 .vercel

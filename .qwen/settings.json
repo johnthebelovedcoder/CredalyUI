@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(C:\\Users\\Home\\Credaly\\services\\scoring-api\\src/**)",
+      "Read(C:\\Users\\Home\\Credaly\\services\\admin-api\\src/**)",
+      "Read(C:\\Users\\Home\\Credaly\\services\\scoring-api\\src\\core/**)",
+      "Read(C:\\Users\\Home\\Credaly\\services\\scoring-api\\src\\services\\consent/**)",
+      "Read(C:\\Users\\Home\\Credaly\\services\\scoring-api\\src\\api/**)"
+    ]
+  },
+  "$version": 3
+}
